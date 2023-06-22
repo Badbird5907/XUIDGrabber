@@ -5,11 +5,11 @@ import okhttp3.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class XUIDGrabber {
+public class CxkesXUIDGrabber {
+    public static boolean useGeyser = true;
     private static final String baseUrl = "https://www.cxkes.me/xbox/xuid";
     private static final OkHttpClient client = new OkHttpClient().newBuilder().build();
     private static final Pattern csrfTokenPattern = Pattern.compile("<input type=\"hidden\" name=\"_token\" value=\"(.*?)\">");
