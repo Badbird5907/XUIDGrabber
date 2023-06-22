@@ -43,7 +43,8 @@ public class XUIDUtils {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            return result.split(":")[1].replace("}", "");
+            String s = result.split(":")[1].replace("}", "");
+            return s.substring(1, s.length() - 1);
         });
     }
 }
