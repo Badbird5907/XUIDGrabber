@@ -17,8 +17,6 @@ public class XUIDGrabber {
 
     public static CompletableFuture<Long> getXUID(String gamertag) {
         return getCsrfTokenData().thenApplyAsync(csrfToken -> {
-            OkHttpClient client = new OkHttpClient().newBuilder()
-                    .build();
             MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
             RequestBody body = RequestBody.create(mediaType, "_token=" + csrfToken.csrfToken + "&gamertag=" + gamertag);
             Request request = new Request.Builder()
